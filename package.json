@@ -1,0 +1,26 @@
+{
+  "name": "globalmercator",
+  "version": "0.0.0",
+  "description": "A javascript port of the GlobalMercator python class found at http://www.maptiler.org/google-maps-coordinates-tile-bounds-projection/",
+  "main": "globalmercator.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davvo/globalmercator.git"
+  },
+  "keywords": [
+    "mercator",
+    "globalmaptiles",
+    "tms"
+  ],
+  "author": "davvo",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/davvo/globalmercator/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1"
+  }
+}
