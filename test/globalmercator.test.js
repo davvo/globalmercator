@@ -48,6 +48,14 @@ it('should convert meters to pixels', function () {
     aproxArrayEqual([123456789, 123456789], mercator.metersToPixels(569754371.206588, 569754371.206588, 15));    
 });
 
+it('should convert latlon to pixels', function () {
+    aproxArrayEqual([4522857.8133333335, 6063687.123767246], mercator.latLonToPixels(62.3, 14.1, 15));
+});
+
+it('should convert pixels to latlon', function () {
+    aproxArrayEqual([62.3, 14.1], mercator.pixelsToLatLon(4522857.8133333335, 6063687.123767246, 15));
+});
+
 it('should convert pixels to tile', function () {
     aproxArrayEqual([0, 0], mercator.pixelsToTile(128, 128));
     aproxArrayEqual([482253, 482253], mercator.pixelsToTile(123456789, 123456789));
