@@ -46,14 +46,26 @@
                 return [x, y];
             },
 
-            // Converts EPSG:900913 to pyramid pixel coordinates in given zoom level
+            // Converts EPSG:900913 to pixel coordinates in given zoom level
             metersToPixels: function (mx, my, zoom) {
                 var res = mercator.resolution(zoom),
                     x = (mx + originShift) / res,
                     y = (my + originShift) / res;
                 return [x, y];
             },
-
+            
+            // Converts given lat/lon in WGS84 Datum to pixel coordinates in given zoom level
+            latLonToPixels: function (lat, lon, zoom) {
+                var meters = mercator.latLonToMeters(lat, lon);
+                return mercator.metersToPixels(meters[0], meters[1], zoom);
+            },
+            
+            // Converts pixel coordinates in given zoom level to lat/lon in WGS84 Datum
+            pixelsToLatLon: function (px, py, zoom) {
+                var meters = mercator.pixelsToMeters(px, py, zoom);
+                return mercator.metersToLatLon(meters[0], meters[1]);
+            },
+            
             // Returns a tile covering region in given pixel coordinates
             pixelsToTile: function (px, py) {
                 return [Math.floor(px / tileSize), Math.floor(py / tileSize)];
