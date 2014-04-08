@@ -94,8 +94,8 @@
 
             tilePixelBounds: function (tx, ty, zoom) {
                 var bounds = mercator.tileBounds(tx, ty, zoom),
-                    min = mercator.metersToPixels(bounds[0], bounds[1]),
-                    max = mercator.metersToPixels(bounds[2], bounds[3]);
+                    min = mercator.metersToPixels(bounds[0], bounds[1], zoom),
+                    max = mercator.metersToPixels(bounds[2], bounds[3], zoom);
                 return min.concat(max);
             }
         };
