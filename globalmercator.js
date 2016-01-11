@@ -105,7 +105,7 @@
         define(function () {
             return mercator;
         });
-    } else if (module !== undefined) {
+    } else if (typeof module !== 'undefined') {
         module.exports = mercator;
     } else {
         window.mercator = mercator;
